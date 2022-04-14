@@ -1,0 +1,775 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     24775,        765]
+NotebookOptionsPosition[     24190,        749]
+NotebookOutlinePosition[     24531,        764]
+CellTagsIndexPosition[     24488,        761]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"lithium1", "=", 
+   RowBox[{
+    RowBox[{"Transpose", "[", 
+     RowBox[{
+     "Import", "[", "\"\<D:\\\\Partition functions\\\\Li I.tsv\>\"", "]"}], 
+     "]"}], "[", 
+    RowBox[{"[", 
+     RowBox[{"3", ";;", "4"}], "]"}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"lithium2", "=", 
+   RowBox[{
+    RowBox[{"Transpose", "[", 
+     RowBox[{
+     "Import", "[", "\"\<D:\\\\Partition functions\\\\Li II.tsv\>\"", "]"}], 
+     "]"}], "[", 
+    RowBox[{"[", 
+     RowBox[{"3", ";;", "4"}], "]"}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"lithium3", "=", 
+    RowBox[{
+     RowBox[{"Transpose", "[", 
+      RowBox[{
+      "Import", "[", "\"\<D:\\\\Partition functions\\\\Li III.tsv\>\"", "]"}],
+       "]"}], "[", 
+     RowBox[{"[", 
+      RowBox[{"3", ";;", "4"}], "]"}], "]"}]}], ";"}], "\n"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"sodium1", "=", 
+    RowBox[{
+     RowBox[{"Transpose", "[", 
+      RowBox[{
+      "Import", "[", "\"\<D:\\\\Partition functions\\\\Na I.tsv\>\"", "]"}], 
+      "]"}], "[", 
+     RowBox[{"[", 
+      RowBox[{"3", ";;", "4"}], "]"}], "]"}]}], ";"}], " "}], "\n", 
+ RowBox[{
+  RowBox[{"sodium2", "=", 
+   RowBox[{
+    RowBox[{"Transpose", "[", 
+     RowBox[{
+     "Import", "[", "\"\<D:\\\\Partition functions\\\\Na II.tsv\>\"", "]"}], 
+     "]"}], "[", 
+    RowBox[{"[", 
+     RowBox[{"3", ";;", "4"}], "]"}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"sodium3", "=", 
+    RowBox[{
+     RowBox[{"Transpose", "[", 
+      RowBox[{
+      "Import", "[", "\"\<D:\\\\Partition functions\\\\Na III.tsv\>\"", "]"}],
+       "]"}], "[", 
+     RowBox[{"[", 
+      RowBox[{"3", ";;", "4"}], "]"}], "]"}]}], ";"}], "\n"}], "\n", 
+ RowBox[{
+  RowBox[{"potassium1", "=", 
+   RowBox[{
+    RowBox[{"Transpose", "[", 
+     RowBox[{
+     "Import", "[", "\"\<D:\\\\Partition functions\\\\K I.tsv\>\"", "]"}], 
+     "]"}], "[", 
+    RowBox[{"[", 
+     RowBox[{"3", ";;", "4"}], "]"}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"potassium2", "=", 
+   RowBox[{
+    RowBox[{"Transpose", "[", 
+     RowBox[{
+     "Import", "[", "\"\<D:\\\\Partition functions\\\\K II.tsv\>\"", "]"}], 
+     "]"}], "[", 
+    RowBox[{"[", 
+     RowBox[{"3", ";;", "4"}], "]"}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"potassium3", "=", 
+    RowBox[{
+     RowBox[{"Transpose", "[", 
+      RowBox[{
+      "Import", "[", "\"\<D:\\\\Partition functions\\\\K III.tsv\>\"", "]"}], 
+      "]"}], "[", 
+     RowBox[{"[", 
+      RowBox[{"3", ";;", "4"}], "]"}], "]"}]}], ";"}], "\n"}], "\n", 
+ RowBox[{
+  RowBox[{"magnesium1", "=", 
+   RowBox[{
+    RowBox[{"Transpose", "[", 
+     RowBox[{
+     "Import", "[", "\"\<D:\\\\Partition functions\\\\Mg I.tsv\>\"", "]"}], 
+     "]"}], "[", 
+    RowBox[{"[", 
+     RowBox[{"3", ";;", "4"}], "]"}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"magnesium2", "=", 
+   RowBox[{
+    RowBox[{"Transpose", "[", 
+     RowBox[{
+     "Import", "[", "\"\<D:\\\\Partition functions\\\\Mg II.tsv\>\"", "]"}], 
+     "]"}], "[", 
+    RowBox[{"[", 
+     RowBox[{"3", ";;", "4"}], "]"}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"magnesium3", "=", 
+    RowBox[{
+     RowBox[{"Transpose", "[", 
+      RowBox[{
+      "Import", "[", "\"\<D:\\\\Partition functions\\\\Mg III.tsv\>\"", "]"}],
+       "]"}], "[", 
+     RowBox[{"[", 
+      RowBox[{"3", ";;", "4"}], "]"}], "]"}]}], ";"}], "\n"}], "\n", 
+ RowBox[{
+  RowBox[{"calcium1", "=", 
+   RowBox[{
+    RowBox[{"Transpose", "[", 
+     RowBox[{
+     "Import", "[", "\"\<D:\\\\Partition functions\\\\Ca I.tsv\>\"", "]"}], 
+     "]"}], "[", 
+    RowBox[{"[", 
+     RowBox[{"3", ";;", "4"}], "]"}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"calcium2", "=", 
+   RowBox[{
+    RowBox[{"Transpose", "[", 
+     RowBox[{
+     "Import", "[", "\"\<D:\\\\Partition functions\\\\Ca II.tsv\>\"", "]"}], 
+     "]"}], "[", 
+    RowBox[{"[", 
+     RowBox[{"3", ";;", "4"}], "]"}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"calcium3", "=", 
+    RowBox[{
+     RowBox[{"Transpose", "[", 
+      RowBox[{
+      "Import", "[", "\"\<D:\\\\Partition functions\\\\Ca III.tsv\>\"", "]"}],
+       "]"}], "[", 
+     RowBox[{"[", 
+      RowBox[{"3", ";;", "4"}], "]"}], "]"}]}], ";"}], "\n"}], "\n", 
+ RowBox[{
+  RowBox[{"aluminium1", "=", 
+   RowBox[{
+    RowBox[{"Transpose", "[", 
+     RowBox[{
+     "Import", "[", "\"\<D:\\\\Partition functions\\\\Al I.tsv\>\"", "]"}], 
+     "]"}], "[", 
+    RowBox[{"[", 
+     RowBox[{"3", ";;", "4"}], "]"}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"aluminium2", "=", 
+   RowBox[{
+    RowBox[{"Transpose", "[", 
+     RowBox[{
+     "Import", "[", "\"\<D:\\\\Partition functions\\\\Al II.tsv\>\"", "]"}], 
+     "]"}], "[", 
+    RowBox[{"[", 
+     RowBox[{"3", ";;", "4"}], "]"}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"aluminium3", "=", 
+    RowBox[{
+     RowBox[{"Transpose", "[", 
+      RowBox[{
+      "Import", "[", "\"\<D:\\\\Partition functions\\\\Al III.tsv\>\"", "]"}],
+       "]"}], "[", 
+     RowBox[{"[", 
+      RowBox[{"3", ";;", "4"}], "]"}], "]"}]}], ";"}], "\n"}], "\n", 
+ RowBox[{
+  RowBox[{"manganese1", "=", 
+   RowBox[{
+    RowBox[{"Transpose", "[", 
+     RowBox[{
+     "Import", "[", "\"\<D:\\\\Partition functions\\\\Mn I.tsv\>\"", "]"}], 
+     "]"}], "[", 
+    RowBox[{"[", 
+     RowBox[{"3", ";;", "4"}], "]"}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"manganese2", "=", 
+   RowBox[{
+    RowBox[{"Transpose", "[", 
+     RowBox[{
+     "Import", "[", "\"\<D:\\\\Partition functions\\\\Mn II.tsv\>\"", "]"}], 
+     "]"}], "[", 
+    RowBox[{"[", 
+     RowBox[{"3", ";;", "4"}], "]"}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"manganese3", "=", 
+    RowBox[{
+     RowBox[{"Transpose", "[", 
+      RowBox[{
+      "Import", "[", "\"\<D:\\\\Partition functions\\\\Mn III.tsv\>\"", "]"}],
+       "]"}], "[", 
+     RowBox[{"[", 
+      RowBox[{"3", ";;", "4"}], "]"}], "]"}]}], ";"}], "\n"}], "\n", 
+ RowBox[{
+  RowBox[{"iron1", "=", 
+   RowBox[{
+    RowBox[{"Transpose", "[", 
+     RowBox[{
+     "Import", "[", "\"\<D:\\\\Partition functions\\\\Fe I.tsv\>\"", "]"}], 
+     "]"}], "[", 
+    RowBox[{"[", 
+     RowBox[{"3", ";;", "4"}], "]"}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"iron2", "=", 
+   RowBox[{
+    RowBox[{"Transpose", "[", 
+     RowBox[{
+     "Import", "[", "\"\<D:\\\\Partition functions\\\\Fe II.tsv\>\"", "]"}], 
+     "]"}], "[", 
+    RowBox[{"[", 
+     RowBox[{"3", ";;", "4"}], "]"}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"iron3", "=", 
+    RowBox[{
+     RowBox[{"Transpose", "[", 
+      RowBox[{
+      "Import", "[", "\"\<D:\\\\Partition functions\\\\Fe III.tsv\>\"", "]"}],
+       "]"}], "[", 
+     RowBox[{"[", 
+      RowBox[{"3", ";;", "4"}], "]"}], "]"}]}], ";"}], "\n"}], "\n", 
+ RowBox[{
+  RowBox[{"phosphorus1", "=", 
+   RowBox[{
+    RowBox[{"Transpose", "[", 
+     RowBox[{
+     "Import", "[", "\"\<D:\\\\Partition functions\\\\P I.tsv\>\"", "]"}], 
+     "]"}], "[", 
+    RowBox[{"[", 
+     RowBox[{"3", ";;", "4"}], "]"}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"phosphorus2", "=", 
+   RowBox[{
+    RowBox[{"Transpose", "[", 
+     RowBox[{
+     "Import", "[", "\"\<D:\\\\Partition functions\\\\P II.tsv\>\"", "]"}], 
+     "]"}], "[", 
+    RowBox[{"[", 
+     RowBox[{"3", ";;", "4"}], "]"}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"phosphorus3", "=", 
+    RowBox[{
+     RowBox[{"Transpose", "[", 
+      RowBox[{
+      "Import", "[", "\"\<D:\\\\Partition functions\\\\P III.tsv\>\"", "]"}], 
+      "]"}], "[", 
+     RowBox[{"[", 
+      RowBox[{"3", ";;", "4"}], "]"}], "]"}]}], ";"}], "\n"}], "\n", 
+ RowBox[{
+  RowBox[{"H1", "=", 
+   RowBox[{
+    RowBox[{"Transpose", "[", 
+     RowBox[{
+     "Import", "[", "\"\<D:\\\\Partition functions\\\\H I.tsv\>\"", "]"}], 
+     "]"}], "[", 
+    RowBox[{"[", 
+     RowBox[{"3", ";;", "4"}], "]"}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"H2", "=", 
+   RowBox[{
+    RowBox[{"Transpose", "[", 
+     RowBox[{
+     "Import", "[", "\"\<D:\\\\Partition functions\\\\H II.tsv\>\"", "]"}], 
+     "]"}], "[", 
+    RowBox[{"[", 
+     RowBox[{"3", ";;", "4"}], "]"}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"H3", "=", 
+    RowBox[{
+     RowBox[{"Transpose", "[", 
+      RowBox[{
+      "Import", "[", "\"\<D:\\\\Partition functions\\\\H III.tsv\>\"", "]"}], 
+      "]"}], "[", 
+     RowBox[{"[", 
+      RowBox[{"3", ";;", "4"}], "]"}], "]"}]}], ";"}], "\n"}], "\n", 
+ RowBox[{
+  RowBox[{"strontium1", "=", 
+   RowBox[{
+    RowBox[{"Transpose", "[", 
+     RowBox[{
+     "Import", "[", "\"\<D:\\\\Partition functions\\\\Sr I.tsv\>\"", "]"}], 
+     "]"}], "[", 
+    RowBox[{"[", 
+     RowBox[{"3", ";;", "4"}], "]"}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"strontium2", "=", 
+   RowBox[{
+    RowBox[{"Transpose", "[", 
+     RowBox[{
+     "Import", "[", "\"\<D:\\\\Partition functions\\\\Sr II.tsv\>\"", "]"}], 
+     "]"}], "[", 
+    RowBox[{"[", 
+     RowBox[{"3", ";;", "4"}], "]"}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"strontium3", "=", 
+    RowBox[{
+     RowBox[{"Transpose", "[", 
+      RowBox[{
+      "Import", "[", "\"\<D:\\\\Partition functions\\\\Sr III.tsv\>\"", "]"}],
+       "]"}], "[", 
+     RowBox[{"[", 
+      RowBox[{"3", ";;", "4"}], "]"}], "]"}]}], ";"}], "\n"}], "\n", 
+ RowBox[{
+  RowBox[{"silicon1", "=", 
+   RowBox[{
+    RowBox[{"Transpose", "[", 
+     RowBox[{
+     "Import", "[", "\"\<D:\\\\Partition functions\\\\Si I.tsv\>\"", "]"}], 
+     "]"}], "[", 
+    RowBox[{"[", 
+     RowBox[{"3", ";;", "4"}], "]"}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"silicon2", "=", 
+   RowBox[{
+    RowBox[{"Transpose", "[", 
+     RowBox[{
+     "Import", "[", "\"\<D:\\\\Partition functions\\\\Si II.tsv\>\"", "]"}], 
+     "]"}], "[", 
+    RowBox[{"[", 
+     RowBox[{"3", ";;", "4"}], "]"}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"silicon3", "=", 
+    RowBox[{
+     RowBox[{"Transpose", "[", 
+      RowBox[{
+      "Import", "[", "\"\<D:\\\\Partition functions\\\\Si III.tsv\>\"", "]"}],
+       "]"}], "[", 
+     RowBox[{"[", 
+      RowBox[{"3", ";;", "4"}], "]"}], "]"}]}], ";"}], "\n"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Partfunc", "[", 
+    RowBox[{"file_", ",", "T_"}], "]"}], ":=", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"g", ",", "levels"}], "}"}], ",", 
+     RowBox[{
+      RowBox[{"g", "=", 
+       RowBox[{"Rest", "[", 
+        RowBox[{"file", "[", 
+         RowBox[{"[", "1", "]"}], "]"}], "]"}]}], ";", " ", 
+      RowBox[{"levels", "=", 
+       RowBox[{"Rest", "[", 
+        RowBox[{"file", "[", 
+         RowBox[{"[", "2", "]"}], "]"}], "]"}]}], ";", " ", 
+      RowBox[{"Total", "[", 
+       RowBox[{"g", "*", 
+        RowBox[{"Exp", "[", 
+         RowBox[{
+          RowBox[{"-", "levels"}], "/", 
+          RowBox[{"(", 
+           RowBox[{"T", "/", "11604"}], ")"}]}], "]"}]}], "]"}]}]}], "]"}]}], 
+  ";"}], "\n", 
+ RowBox[{
+  RowBox[{"EionLi1", "=", "5.391714761"}], ";", " ", 
+  RowBox[{"EionLi2", "=", "75.6400964"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"EionNa1", "=", "5.1390769"}], ";", " ", 
+  RowBox[{"EionNa2", "=", "47.28636"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"EionK1", "=", "4.34066354"}], ";", " ", 
+  RowBox[{"EionK2", "=", "31.625"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"EionMg1", "=", "7.646236"}], ";", " ", 
+  RowBox[{"EionMg2", "=", "15.035271"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"EionCa1", "=", "6.1131552"}], ";", " ", 
+  RowBox[{"EionCa2", "=", "11.871719"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"EionAl1", "=", "5.985769"}], ";", 
+  RowBox[{"EionAl2", "=", "18.82855"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"EionFe1", "=", "7.9024681"}], ";", " ", 
+  RowBox[{"EionFe2", "=", "16.19921"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"EionMn1", "=", "7.4340380"}], ";", " ", 
+  RowBox[{"EionMn2", "=", "15.63999"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"EionP1", "=", "10.486686"}], ";", " ", 
+  RowBox[{"EionP2", "=", "19.76949"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"EionH1", "=", "13.598434599702"}], ";", " ", 
+  RowBox[{"EionH2", "=", "0"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"EionSr1", "=", "5.69486745"}], ";", " ", 
+  RowBox[{"EionSr2", "=", "11.0302765"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"EionSi1", "=", "8.15168"}], ";", " ", 
+  RowBox[{"EionSi2", "=", "16.34585"}], ";"}]}], "Input",ExpressionUUID->\
+"ea1a1fbb-d4ab-4dea-bbe0-1c822e517cd7"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"ne", "=", 
+    RowBox[{"0.5", "*", 
+     RowBox[{"10", "^", "16"}]}]}], ";", " ", 
+   RowBox[{"T", "=", "5000"}], ";", " ", 
+   RowBox[{"L", "=", 
+    RowBox[{"Sqrt", "[", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"6.626", "*", 
+          RowBox[{"10", "^", 
+           RowBox[{"-", "34"}]}]}], ")"}], "^", "2"}], ")"}], "/", 
+      RowBox[{"(", 
+       RowBox[{"2", "*", "Pi", "*", "T", "*", 
+        RowBox[{"(", 
+         RowBox[{"9.1094", "*", 
+          RowBox[{"10", "^", 
+           RowBox[{"-", "31"}]}]}], ")"}], "*", "1.38", "*", 
+        RowBox[{"10", "^", 
+         RowBox[{"-", "23"}]}]}], ")"}]}], "]"}]}], ";"}], "\n", "\n", 
+  RowBox[{"(*", 
+   RowBox[{"One", "-", 
+    RowBox[{"stage", " ", "ionization", " ", 
+     RowBox[{"quotient", ":", " ", 
+      RowBox[{
+      "file2", " ", "refers", " ", "to", " ", "species", " ", "with", " ", 
+       "higher", " ", "ionization"}]}]}]}], "*)"}]}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"alpha", "[", 
+     RowBox[{"file1_", ",", "file2_", ",", "Eion_", ",", "T_", ",", "ne_"}], 
+     "]"}], ":=", 
+    RowBox[{"Module", "[", 
+     RowBox[{
+      RowBox[{"{", "L", "}"}], ",", "\n", 
+      RowBox[{
+       RowBox[{"L", "=", 
+        RowBox[{"Sqrt", "[", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{"6.626", "*", 
+              RowBox[{"10", "^", 
+               RowBox[{"-", "34"}]}]}], ")"}], "^", "2"}], ")"}], "/", 
+          RowBox[{"(", 
+           RowBox[{"2", "*", "Pi", "*", "T", "*", 
+            RowBox[{"(", 
+             RowBox[{"9.1094", "*", 
+              RowBox[{"10", "^", 
+               RowBox[{"-", "31"}]}]}], ")"}], "*", "1.38", "*", 
+            RowBox[{"10", "^", 
+             RowBox[{"-", "23"}]}]}], ")"}]}], "]"}]}], ";", "\n", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"2", "/", 
+          RowBox[{"L", "^", "3"}]}], ")"}], "*", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"Partfunc", "[", 
+           RowBox[{"file2", ",", "T"}], "]"}], "/", 
+          RowBox[{"Partfunc", "[", 
+           RowBox[{"file1", ",", "T"}], "]"}]}], ")"}], "*", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"10", "^", 
+           RowBox[{"-", "6"}]}], "/", "ne"}], ")"}], "*", 
+        RowBox[{"Exp", "[", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"-", "Eion"}], "/", 
+           RowBox[{"(", 
+            RowBox[{"T", "/", "11604"}], ")"}]}], ")"}], "]"}]}]}]}], "]"}]}],
+    ";"}], "\n", "\n", 
+  RowBox[{"(*", 
+   RowBox[{"Neutral", " ", "atom", " ", "quotient", " ", 
+    RowBox[{"(", 
+     RowBox[{
+     "two", " ", "stages", " ", "of", " ", "ionization", " ", "taken", " ", 
+      "into", " ", "account"}], ")"}]}], "*)"}]}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"ntlquot", "[", 
+     RowBox[{
+     "file1_", ",", "file2_", ",", "file3_", ",", "Eion1_", ",", "Eion2_", 
+      ",", "T_", ",", "ne_"}], "]"}], ":=", 
+    RowBox[{"Module", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"L", ",", "alpha1", ",", "alpha2"}], "}"}], ",", "\n", 
+      RowBox[{
+       RowBox[{"L", "=", 
+        RowBox[{"Sqrt", "[", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{"6.626", "*", 
+              RowBox[{"10", "^", 
+               RowBox[{"-", "34"}]}]}], ")"}], "^", "2"}], ")"}], "/", 
+          RowBox[{"(", 
+           RowBox[{"2", "*", "Pi", "*", "T", "*", 
+            RowBox[{"(", 
+             RowBox[{"9.1094", "*", 
+              RowBox[{"10", "^", 
+               RowBox[{"-", "31"}]}]}], ")"}], "*", "1.38", "*", 
+            RowBox[{"10", "^", 
+             RowBox[{"-", "23"}]}]}], ")"}]}], "]"}]}], ";", "\n", 
+       RowBox[{"alpha1", "=", 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{"2", "/", 
+           RowBox[{"L", "^", "3"}]}], ")"}], "*", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"Partfunc", "[", 
+            RowBox[{"file2", ",", "T"}], "]"}], "/", 
+           RowBox[{"Partfunc", "[", 
+            RowBox[{"file1", ",", "T"}], "]"}]}], ")"}], "*", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"10", "^", 
+            RowBox[{"-", "6"}]}], "/", "ne"}], ")"}], "*", 
+         RowBox[{"Exp", "[", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"-", "Eion1"}], "/", 
+            RowBox[{"(", 
+             RowBox[{"T", "/", "11604"}], ")"}]}], ")"}], "]"}]}]}], ";", 
+       "\n", 
+       RowBox[{"alpha2", "=", 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{"2", "/", 
+           RowBox[{"L", "^", "3"}]}], ")"}], "*", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"Partfunc", "[", 
+            RowBox[{"file3", ",", "T"}], "]"}], "/", 
+           RowBox[{"Partfunc", "[", 
+            RowBox[{"file2", ",", "T"}], "]"}]}], ")"}], "*", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"10", "^", 
+            RowBox[{"-", "6"}]}], "/", "ne"}], ")"}], "*", 
+         RowBox[{"Exp", "[", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"-", "Eion2"}], "/", 
+            RowBox[{"(", 
+             RowBox[{"T", "/", "11604"}], ")"}]}], ")"}], "]"}]}]}], ";", 
+       "\n", 
+       RowBox[{"If", "[", 
+        RowBox[{
+         RowBox[{"Eion2", "\[Equal]", "0"}], ",", 
+         RowBox[{"alpha2", "=", "0"}]}], "]"}], ";", "\n", 
+       RowBox[{"1", "/", 
+        RowBox[{"(", 
+         RowBox[{"1", "+", "alpha1", "+", 
+          RowBox[{"alpha1", "*", "alpha2"}]}], ")"}]}]}]}], "]"}]}], ";"}], 
+  "\n"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"ion1quot", "[", 
+     RowBox[{
+     "file1_", ",", "file2_", ",", "file3_", ",", "Eion1_", ",", "Eion2_", 
+      ",", "T_", ",", "ne_"}], "]"}], ":=", 
+    RowBox[{"Module", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"L", ",", "alpha1", ",", "alpha2"}], "}"}], ",", "\n", 
+      RowBox[{
+       RowBox[{"L", "=", 
+        RowBox[{"Sqrt", "[", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{"6.626", "*", 
+              RowBox[{"10", "^", 
+               RowBox[{"-", "34"}]}]}], ")"}], "^", "2"}], ")"}], "/", 
+          RowBox[{"(", 
+           RowBox[{"2", "*", "Pi", "*", "T", "*", 
+            RowBox[{"(", 
+             RowBox[{"9.1094", "*", 
+              RowBox[{"10", "^", 
+               RowBox[{"-", "31"}]}]}], ")"}], "*", "1.38", "*", 
+            RowBox[{"10", "^", 
+             RowBox[{"-", "23"}]}]}], ")"}]}], "]"}]}], ";", "\n", 
+       RowBox[{"alpha1", "=", 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{"2", "/", 
+           RowBox[{"L", "^", "3"}]}], ")"}], "*", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"Partfunc", "[", 
+            RowBox[{"file2", ",", "T"}], "]"}], "/", 
+           RowBox[{"Partfunc", "[", 
+            RowBox[{"file1", ",", "T"}], "]"}]}], ")"}], "*", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"10", "^", 
+            RowBox[{"-", "6"}]}], "/", "ne"}], ")"}], "*", 
+         RowBox[{"Exp", "[", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"-", "Eion1"}], "/", 
+            RowBox[{"(", 
+             RowBox[{"T", "/", "11604"}], ")"}]}], ")"}], "]"}]}]}], ";", 
+       "\n", 
+       RowBox[{"alpha2", "=", 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{"2", "/", 
+           RowBox[{"L", "^", "3"}]}], ")"}], "*", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"Partfunc", "[", 
+            RowBox[{"file3", ",", "T"}], "]"}], "/", 
+           RowBox[{"Partfunc", "[", 
+            RowBox[{"file2", ",", "T"}], "]"}]}], ")"}], "*", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"10", "^", 
+            RowBox[{"-", "6"}]}], "/", "ne"}], ")"}], "*", 
+         RowBox[{"Exp", "[", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"-", "Eion2"}], "/", 
+            RowBox[{"(", 
+             RowBox[{"T", "/", "11604"}], ")"}]}], ")"}], "]"}]}]}], ";", 
+       "\n", 
+       RowBox[{"If", "[", 
+        RowBox[{
+         RowBox[{"Eion2", "\[Equal]", "0"}], ",", 
+         RowBox[{"alpha2", "=", "0"}]}], "]"}], ";", "\n", 
+       RowBox[{"alpha1", "/", 
+        RowBox[{"(", 
+         RowBox[{"1", "+", "alpha1", "+", 
+          RowBox[{"alpha1", "*", "alpha2"}]}], ")"}]}]}]}], "]"}]}], ";"}], 
+  "\n"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Q", "[", 
+    RowBox[{
+    "stage_", ",", "filepartfunc_", ",", "Ex_", ",", "file1_", ",", "file2_", 
+     ",", "file3_", ",", "Eion1_", ",", "Eion2_", ",", "T_", ",", "ne_"}], 
+    "]"}], ":=", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", "output", "}"}], ",", "\n", "\n", 
+     RowBox[{
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{"stage", "\[Equal]", "1"}], ",", "\n", 
+        RowBox[{"output", "=", 
+         RowBox[{
+          RowBox[{"Partfunc", "[", 
+           RowBox[{"filepartfunc", ",", "T"}], "]"}], "*", 
+          RowBox[{
+           RowBox[{"Exp", "[", 
+            RowBox[{"Ex", "/", 
+             RowBox[{"(", 
+              RowBox[{"T", "/", "11604"}], ")"}]}], "]"}], "/", 
+           RowBox[{"ntlquot", "[", 
+            RowBox[{
+            "file1", ",", "file2", ",", "file3", ",", "Eion1", ",", "Eion2", 
+             ",", "T", ",", "ne"}], "]"}]}]}]}]}], "]"}], ";", "\n", 
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{"stage", "\[Equal]", "2"}], ",", "\n", 
+        RowBox[{"output", "=", 
+         RowBox[{
+          RowBox[{"Partfunc", "[", 
+           RowBox[{"filepartfunc", ",", "T"}], "]"}], "*", 
+          RowBox[{
+           RowBox[{"Exp", "[", 
+            RowBox[{"Ex", "/", 
+             RowBox[{"(", 
+              RowBox[{"T", "/", "11604"}], ")"}]}], "]"}], "/", 
+           RowBox[{"ion1quot", "[", 
+            RowBox[{
+            "file1", ",", "file2", ",", "file3", ",", "Eion1", ",", "Eion2", 
+             ",", "T", ",", "ne"}], "]"}]}]}]}]}], "]"}], ";", "\n", 
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{"stage", ">", "2"}], ",", "\n", 
+        RowBox[{"output", "=", "\"\<no data\>\""}]}], "]"}], ";", " ", 
+      "output"}]}], "\n", "\t", "]"}]}], ";"}]}], "Input",ExpressionUUID->\
+"221fcd05-b087-48d9-ad68-5c89ab0d2b0e"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Needs", "[", "\"\<NumericalCalculus`\>\"", "]"}], ";"}]], "Input",E\
+xpressionUUID->"c3cfa292-9dc7-4fc0-badd-a977201175a7"],
+
+Cell[BoxData[
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"Log", "[", 
+      RowBox[{"Q", "[", 
+       RowBox[{
+       "2", ",", "manganese2", ",", "4.81", ",", "manganese1", ",", 
+        "manganese2", ",", "manganese3", ",", "EionMn1", ",", "EionMn2", ",", 
+        "x", ",", 
+        RowBox[{"5", "*", 
+         RowBox[{"10", "^", "16"}]}]}], "]"}], "]"}], ",", 
+     RowBox[{"Log", "[", 
+      RowBox[{"ion1quot", "[", 
+       RowBox[{
+       "manganese1", ",", "manganese2", ",", "manganese3", ",", "EionMn1", 
+        ",", "EionMn2", ",", "x", ",", 
+        RowBox[{"5", "*", 
+         RowBox[{"10", "^", "16"}]}]}], "]"}], "]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "5000", ",", "25000"}], "}"}]}], "]"}]], "Input",Express\
+ionUUID->"e0d8ec47-ef2b-463a-8fdb-76681104c6a0"]
+},
+WindowSize->{1584, 817},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"11.3 for Microsoft Windows (64-bit) (March 6, 2018)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 12306, 399, 1854, "Input",ExpressionUUID->"ea1a1fbb-d4ab-4dea-bbe0-1c822e517cd7"],
+Cell[12867, 421, 10325, 297, 959, "Input",ExpressionUUID->"221fcd05-b087-48d9-ad68-5c89ab0d2b0e"],
+Cell[23195, 720, 158, 3, 45, "Input",ExpressionUUID->"c3cfa292-9dc7-4fc0-badd-a977201175a7"],
+Cell[23356, 725, 830, 22, 66, "Input",ExpressionUUID->"e0d8ec47-ef2b-463a-8fdb-76681104c6a0"]
+}
+]
+*)
+
+(* End of internal cache information *)
+
